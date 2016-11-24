@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ShapeIt
 //
-//  Created by Anthony Latsis on 30.10.16.
+//  Created by Anthony Latsis on 21.11.16.
 //  Copyright © 2016 Anthony Latsis. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setupWindow()
         loadRootViewController()
@@ -26,7 +26,7 @@ extension AppDelegate {
     }
     
     func loadRootViewController() {
-        window!.rootViewController =  GameViewController(mode: .regular)
+        window!.rootViewController = GameViewController()
         window!.makeKeyAndVisible()
     }
 }

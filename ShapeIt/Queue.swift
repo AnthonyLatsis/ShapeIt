@@ -9,7 +9,7 @@
 import Foundation
 
 class Queue<T> {
-    fileprivate var queue: [T] = []
+    var queue: [T] = []
     
     var count: Int {
         return queue.count

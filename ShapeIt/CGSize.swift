@@ -1,15 +1,15 @@
 //
 //  CGSize.swift
-//  ShapeIt
+//  demo
 //
-//  Created by Anthony Latsis on 30.10.16.
+//  Created by Anthony Latsis on 20.11.16.
 //  Copyright © 2016 Anthony Latsis. All rights reserved.
 //
 
-import  UIKit
+import UIKit
 
 extension CGSize {
-    init(size: CGFloat) {
+    init(_ size: CGFloat) {
         self.init(width: size, height: size)
     }
 }

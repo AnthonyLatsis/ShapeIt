@@ -31,20 +31,30 @@ class Figure {
     class func figure(for level: Int, mode: GameMode) -> Figure {
         switch mode {
         case .regular:
-            var matrixSize = (level / 5 + level / 10, level / 5)
+            var matrixSize = (0, 0)
             
-            if level >= 40 {
-                matrixSize = GameMap.maximumMatrixSize
+            switch level {
+            case 0..<5:
+                matrixSize = (4, 3)
+            case 5..<10:
+                matrixSize = (6, 4)
+            case 10..<15:
+                matrixSize = (8, 5)
+            case 15..<20:
+                matrixSize = (10, 6)
+            case 20..<25:
+                matrixSize = (12, 7)
+            default:
+                matrixSize = (12, 7)
             }
+   
             if level % 5 == 0 {
-                let randomNumber = Randomizer.randomInt(upperBound: 3)
+                let randomNumber = Randomizer.randomInt(upperBound: 2)
                 
                 switch randomNumber {
                 case 0:
-                    return Figure(size: matrixSize, symmetryStyle: .central)
-                case 1:
                     return Figure(size: matrixSize, symmetryStyle: .vertical)
-                case 2:
+                case 1:
                     return Figure(size: matrixSize, symmetryStyle: .horizontal)
                 default: fatalError()
                 }

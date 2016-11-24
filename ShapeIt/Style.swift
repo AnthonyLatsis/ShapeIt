@@ -26,16 +26,16 @@ class Style {
     
     static let edgeViewSize: CGFloat = Style.cellSize + Style.bezel
     
-    static let cellBounds: CGRect = CGRect(origin: CGPoint.zero, size: CGSize(size: Style.edgeViewSize))
+    static let cellBounds: CGRect = CGRect(size: CGSize(Style.edgeViewSize))
     
-    static let verticalEdgeBounds: CGRect = CGRect(origin: CGPoint.zero, size: CGSize(width: Style.bezel, height: Style.edgeViewSize))
+    static let stickSize: CGSize = CGSize(width: Style.bezel, height: Style.edgeViewSize)
 }
 
 // Nodes
 extension Style {
-    static let nodeViewBounds: CGRect = CGRect(origin: CGPoint.zero, size: CGSize(size: Style.bezel))
+    static let nodeViewBounds: CGRect = CGRect(origin: CGPoint.zero, size: CGSize(Style.bezel))
     
-    static let nodeSquareEdgeBounds: CGRect = CGRect(origin: CGPoint.zero, size: CGSize(size: Style.edgeBorderWidth))
+    static let nodeSquareEdgeBounds: CGRect = CGRect(origin: CGPoint.zero, size: CGSize(Style.edgeBorderWidth))
     
     static let nodeVerticalRectEdgeBounds: CGRect = CGRect(origin: CGPoint.zero, size: CGSize(width: Style.edgeBorderWidth, height: Style.bezel))
     

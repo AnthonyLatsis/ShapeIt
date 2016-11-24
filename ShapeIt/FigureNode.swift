@@ -1,71 +1,61 @@
 //
-//  FigureView.swift
+//  FigureNode.swift
 //  ShapeIt
 //
-//  Created by Anthony Latsis on 07.11.16.
+//  Created by Anthony Latsis on 21.11.16.
 //  Copyright © 2016 Anthony Latsis. All rights reserved.
 //
 
+import SpriteKit
 import UIKit
 
-class FigureView: UIView {
+class FigureNode: SKShapeNode {
     let figure: Figure
-    
-    var edges: [EdgeView] = []
-    var nodes: [NodeView] = []
-    
+
+    var edges: [StickNode] = []
+
     var orientationForCompleteFigure: [Orientation] = []
-    
-    init(for level: Int = 0, mode: GameMode) {
+
+    init(size: CGSize, for level: Int = 0, mode: GameMode) {
         self.figure = Figure.figure(for: level, mode: mode)
-       
-        super.init(frame: Screen.bounds)
-    
-        setUI()
+        
+        super.init()
+        self.path = UIBezierPath(rect: CGRect(origin: CGPoint.zero, size: size)).cgPath
+        
+        setSK()
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-extension FigureView: ViewInterfaceSetter {
-    func setUI() {
-        self.backgroundColor = .clear
-        
+extension FigureNode {
+    func setSK() {
+        self.fillColor = .clear
+        self.lineWidth = 0.0
+
         if figure.matrix.isNeutral() {
-            setUI()
+            // FIXME: not working for now
+            setSK()
             return
         }
-        
         for (i, row) in figure.verticalEdges.matrix.enumerated() {
             for (j, element) in row.enumerated() {
                 if element {
-                    let edge = EdgeView(orientation: .vertical)
+                    let edge = StickNode(size: Style.stickSize, orientation: .vertical, fillColor: Style.lightPurple)
                     edges.append(edge)
-                    insert(subviews: [edge], at: 10)
-                    edge.center = GameMap.positionOnScreenForVerticalEdge(indexes: (i, j), in: figure)
+                    self.addChild(edge)
+                    edge.position = GameMap.positionOnScreenForVerticalEdge(indexes: (i, j), in: figure)
                 }
             }
         }
         for (i, row) in figure.horizontalEdges.matrix.enumerated() {
             for (j, element) in row.enumerated() {
                 if element {
-                    let edge = EdgeView(orientation: .horizontal)
+                    let edge = StickNode(size: Style.stickSize, orientation: .horizontal, fillColor: Style.lightPurple)
                     edges.append(edge)
-                    insert(subviews: [edge], at: 10)
-                    edge.center = GameMap.positionOnScreenForHorizontalEdge(indexes: (i, j), in: figure)
-                }
-            }
-        }
-        for (i, row) in figure.nodes.matrix.enumerated() {
-            for (j, element) in row.enumerated() {
-                if element {
-                    let nodeType = GameMap.nodeTypeFor(indexes: (i, j), in: figure)
-                    let node = NodeView(type: nodeType)
-                    self.nodes.append(node)
-                    insert(subviews: [node], at: 10)
-                    node.center = GameMap.positionOnScreenForNode(indexes: (i, j), in: figure)
+                    self.addChild(edge)
+                    edge.position = GameMap.positionOnScreenForHorizontalEdge(indexes: (i, j), in: figure)
                 }
             }
         }
@@ -74,15 +64,10 @@ extension FigureView: ViewInterfaceSetter {
         }
         
         disassembleFigure()
-        
-        for node in self.nodes {
-            bringSubview(toFront: node)
-            node.isHidden = true
-        }
     }
 }
 
-extension FigureView {
+extension FigureNode {
     func disassembleFigure() {
         var randomOrientations = Randomizer.randomArrayOf(size: orientationForCompleteFigure.count, spawn: Randomizer.randomOrientation)
         
@@ -110,11 +95,11 @@ extension FigureView {
         return true
     }
     
-    func findClosestEdge(to point: CGPoint) -> EdgeView? {
+    func findClosestEdge(to point: CGPoint) -> StickNode? {
         var edgeIndex = 0
         var minimumDistance: CGFloat = 0.0
         for (index, edge) in edges.enumerated() {
-            let currentDistance: CGFloat = max(abs(edge.center.x - point.x), abs(edge.center.y - point.y))
+            let currentDistance: CGFloat = max(abs(edge.position.x - point.x), abs(edge.position.y - point.y))
             if minimumDistance == 0.0 {
                 minimumDistance = currentDistance
             }

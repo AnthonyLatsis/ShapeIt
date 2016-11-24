@@ -21,35 +21,9 @@ enum GameViewEvent {
 }
 
 final class SIEventCenter: EventCenter {
-    fileprivate static var dict: [SIViewController] = []
-}
-
-// MARK: Event Routers
-extension SIEventCenter {
-    class func route(event: DynamicGameViewEvent) {
-        switch event {
-        case .gameOver:
-            getManager(DynamicGameViewController.self, DynamicGameViewEventManager.self).handle(event: event)
-        }
-    }
+    static var dict: [SIViewController] = []
     
-    class func route(event: StaticGameViewEvent) {
-        switch event {
-        case .edgeTapped:
-            getManager(StaticGameViewController.self, StaticGameViewEventManager.self).handle(event: event)
-        }
-    }
-    
-    class func route(event: GameViewEvent) {
-        switch event {
-        case .switchMode:
-            getManager(GameViewController.self, GameViewEventManager.self).handle(event: event)
-        }
-    }
-}
-
-extension SIEventCenter {
-    class func post(event: Any) {
+    override class func post(event: Any) {
         switch event {
         case is DynamicGameViewEvent:
             route(event: event as! DynamicGameViewEvent)
@@ -60,42 +34,29 @@ extension SIEventCenter {
         default: break
         }
     }
-    
-    class func add(vc: SIViewController) {
-        dict.append(vc)
+}
+
+// MARK: Event Routers
+extension SIEventCenter {
+    class func route(event: DynamicGameViewEvent) {
+//        switch event {
+//        case .gameOver:
+//            getManager(DynamicGameViewController.self, DynamicGameViewEventManager.self).handle(event: event)
+//        }
     }
     
-    class func remove(vc: SIViewController) {
-        dict.remove(at: findIndexFor(vc: vc))
+    class func route(event: StaticGameViewEvent) {
+//        switch event {
+//        case .edgeTapped:
+//            getManager(StaticGameViewController.self, StaticGameViewEventManager.self).handle(event: event)
+//        }
+    }
+    
+    class func route(event: GameViewEvent) {
+//        switch event {
+//        case .switchMode:
+//            getManager(GameViewController.self, GameViewEventManager.self).handle(event: event)
+//        }
     }
 }
 
-extension SIEventCenter {
-    class func findIndexFor(vc: SIViewController) -> Int {
-        for (i, viewController) in dict.enumerated() {
-            if viewController == vc {
-                return i
-            }
-        }
-        fatalError()
-    }
-    
-    class func activeVCs() -> [SIViewController] {
-        var vcs: [SIViewController] = []
-        for vc in dict {
-            if vc.active || (vc.isViewLoaded && vc.view.window != nil) || vc.view.superview != nil {
-                vcs.append(vc)
-            }
-        }
-        return vcs
-    }
-    
-    class func getManager<X, Y>(_: X.Type, _: Y.Type) -> Y {
-        for vc in activeVCs() {
-            if vc is X {
-                return (vc as! Y)
-            }
-        }
-        fatalError()
-    }
-}
