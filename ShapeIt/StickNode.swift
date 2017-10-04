@@ -37,7 +37,7 @@ extension StickNode {
         self.lineWidth = 0.0
         
         if orientation == .horizontal {
-            self.run(SKAction.rotate(byAngle: CGFloat(M_PI_2), duration: 0.0))
+            self.run(SKAction.rotate(byAngle: .pi / 2, duration: 0.0))
         }
     }
 }
@@ -50,7 +50,7 @@ extension StickNode {
             orientation = .vertical
         }
         if rotate {
-            self.run(SKAction.rotate(byAngle: CGFloat(M_PI_2), duration: 0.0))
+            self.run(SKAction.rotate(byAngle: .pi / 2, duration: 0.0))
         }
     }
 }

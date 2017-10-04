@@ -15,14 +15,7 @@ enum GameMode {
     case dynamic
 }
 
-class GameViewController: SIViewController {
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+class GameViewController: UIViewController {
     
     override func loadView() {
         self.view = SKView()
@@ -38,8 +31,8 @@ class GameViewController: SIViewController {
         scene.scaleMode = .resizeFill
         
         view.ignoresSiblingOrder = true
-        view.showsFPS = true
-        view.showsNodeCount = true
+//        view.showsFPS = true
+//        view.showsNodeCount = true
         
         view.presentScene(scene)
     }

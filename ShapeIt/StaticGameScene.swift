@@ -14,7 +14,7 @@ class StaticGameScene: SKScene {
     
     var labelNode = SKLabelNode()
     
-    var level: Int = 24
+    var level: Int = 1
     
     override init(size: CGSize) {
         self.figureNode = FigureNode(size: size, for: level, mode: .regular)
@@ -57,7 +57,7 @@ extension StaticGameScene {
         guard let edge = optionalEdge else {
             return
         }
-        edge.run(SKAction.rotate(byAngle: CGFloat(M_PI_2), duration: 0.15)) {
+        edge.run(SKAction.rotate(byAngle: .pi / 2, duration: 0.15)) {
             if self.figureNode.isFigureComplete() {
                 self.animateFigureCompletion()
             }
@@ -107,7 +107,7 @@ extension StaticGameScene {
         
         figureNode.edges[randomIndex].run(SKAction.sequence([
             SKAction.wait(forDuration: 5.25 - Double(level) / 20.0),
-            SKAction.rotate(byAngle: CGFloat(M_PI_2), duration: 0.15)
+            SKAction.rotate(byAngle: .pi / 2, duration: 0.15)
             ])) {
                 self.figureNode.edges[randomIndex].changeOrientation(rotate: false)
             self.rotateRandomEdge()
@@ -121,8 +121,8 @@ extension StaticGameScene {
             var rotationAngle: CGFloat = 0.0
             var count: Int = 0
             
-            if i % 2 == 0 { rotationAngle = CGFloat(M_PI) }
-            else          { rotationAngle = -CGFloat(M_PI) }
+            if i % 2 == 0 { rotationAngle = .pi }
+            else          { rotationAngle = -.pi }
             
             if i < (edgesCount / 2) { count = i }
             else { count = (edgesCount - 1) - (i - edgesCount / 2)}

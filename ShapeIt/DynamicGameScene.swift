@@ -53,7 +53,7 @@ extension DynamicGameScene {
                 guard let edge = optionalEdge else {
                     return
                 }
-                edge.run(SKAction.rotate(byAngle: CGFloat(M_PI_2), duration: 0.15))
+                edge.run(SKAction.rotate(byAngle: .pi / 2, duration: 0.15))
                 edge.changeOrientation(rotate: false)
             }
         }

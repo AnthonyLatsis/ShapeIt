@@ -17,17 +17,15 @@
 		594BDD6B1DE26B6D00A2CDDB /* StickNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD6A1DE26B6D00A2CDDB /* StickNode.swift */; };
 		594BDD6E1DE26FDC00A2CDDB /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD6C1DE26FDC00A2CDDB /* CGRect.swift */; };
 		594BDD6F1DE26FDC00A2CDDB /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD6D1DE26FDC00A2CDDB /* CGSize.swift */; };
-		594BDD7B1DE2712D00A2CDDB /* EventCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD721DE2712C00A2CDDB /* EventCenter.swift */; };
 		594BDD7C1DE2712D00A2CDDB /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD731DE2712C00A2CDDB /* Figure.swift */; };
 		594BDD7D1DE2712D00A2CDDB /* GameMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD741DE2712C00A2CDDB /* GameMap.swift */; };
 		594BDD7E1DE2712D00A2CDDB /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD751DE2712C00A2CDDB /* Matrix.swift */; };
 		594BDD7F1DE2712D00A2CDDB /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD761DE2712D00A2CDDB /* Queue.swift */; };
 		594BDD801DE2712D00A2CDDB /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD771DE2712D00A2CDDB /* Randomizer.swift */; };
 		594BDD811DE2712D00A2CDDB /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD781DE2712D00A2CDDB /* Screen.swift */; };
-		594BDD821DE2712D00A2CDDB /* SIEventCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD791DE2712D00A2CDDB /* SIEventCenter.swift */; };
+		594BDD821DE2712D00A2CDDB /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD791DE2712D00A2CDDB /* Events.swift */; };
 		594BDD831DE2712D00A2CDDB /* SIMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD7A1DE2712D00A2CDDB /* SIMatrix.swift */; };
 		594BDD871DE2752600A2CDDB /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD861DE2752600A2CDDB /* Style.swift */; };
-		594BDD8B1DE2765F00A2CDDB /* SIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD8A1DE2765F00A2CDDB /* SIViewController.swift */; };
 		594BDD8D1DE2771400A2CDDB /* FigureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD8C1DE2771400A2CDDB /* FigureNode.swift */; };
 		594BDD8F1DE278BB00A2CDDB /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BDD8E1DE278BB00A2CDDB /* Array.swift */; };
 		59C340A21DE5CAAE003C166F /* bubbleboddy Fat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59C340A01DE5CAAE003C166F /* bubbleboddy Fat.ttf */; };
@@ -47,17 +45,15 @@
 		594BDD6A1DE26B6D00A2CDDB /* StickNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickNode.swift; sourceTree = "<group>"; };
 		594BDD6C1DE26FDC00A2CDDB /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		594BDD6D1DE26FDC00A2CDDB /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
-		594BDD721DE2712C00A2CDDB /* EventCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCenter.swift; sourceTree = "<group>"; };
 		594BDD731DE2712C00A2CDDB /* Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Figure.swift; sourceTree = "<group>"; };
 		594BDD741DE2712C00A2CDDB /* GameMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMap.swift; sourceTree = "<group>"; };
 		594BDD751DE2712C00A2CDDB /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		594BDD761DE2712D00A2CDDB /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		594BDD771DE2712D00A2CDDB /* Randomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		594BDD781DE2712D00A2CDDB /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		594BDD791DE2712D00A2CDDB /* SIEventCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIEventCenter.swift; sourceTree = "<group>"; };
+		594BDD791DE2712D00A2CDDB /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		594BDD7A1DE2712D00A2CDDB /* SIMatrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIMatrix.swift; sourceTree = "<group>"; };
 		594BDD861DE2752600A2CDDB /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
-		594BDD8A1DE2765F00A2CDDB /* SIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIViewController.swift; sourceTree = "<group>"; };
 		594BDD8C1DE2771400A2CDDB /* FigureNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigureNode.swift; sourceTree = "<group>"; };
 		594BDD8E1DE278BB00A2CDDB /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		59C340A01DE5CAAE003C166F /* bubbleboddy Fat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bubbleboddy Fat.ttf"; sourceTree = "<group>"; };
@@ -98,11 +94,11 @@
 				594BDD541DE2612300A2CDDB /* StaticGameScene.swift */,
 				5918D4F41DE42D510096A8D7 /* DynamicGameScene.swift */,
 				594BDD841DE2713600A2CDDB /* Helper Classes */,
+				59C340B31DE72E0A003C166F /* Event Handling */,
 				594BDD881DE2756900A2CDDB /* Class Templates */,
 				594BDD891DE2761800A2CDDB /* Custom UI */,
 				594BDD691DE26B4D00A2CDDB /* Custom SK */,
 				594BDD701DE26FE200A2CDDB /* Extensions */,
-				594BDD851DE2715E00A2CDDB /* Protocols */,
 				594BDD681DE26AB700A2CDDB /* Support Files */,
 				594BDD711DE26FFD00A2CDDB /* Assets */,
 			);
@@ -152,7 +148,6 @@
 		594BDD841DE2713600A2CDDB /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
-				594BDD791DE2712D00A2CDDB /* SIEventCenter.swift */,
 				594BDD741DE2712C00A2CDDB /* GameMap.swift */,
 				594BDD7A1DE2712D00A2CDDB /* SIMatrix.swift */,
 				594BDD781DE2712D00A2CDDB /* Screen.swift */,
@@ -163,19 +158,11 @@
 			name = "Helper Classes";
 			sourceTree = "<group>";
 		};
-		594BDD851DE2715E00A2CDDB /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
 		594BDD881DE2756900A2CDDB /* Class Templates */ = {
 			isa = PBXGroup;
 			children = (
 				594BDD751DE2712C00A2CDDB /* Matrix.swift */,
 				594BDD761DE2712D00A2CDDB /* Queue.swift */,
-				594BDD721DE2712C00A2CDDB /* EventCenter.swift */,
 			);
 			name = "Class Templates";
 			sourceTree = "<group>";
@@ -183,9 +170,16 @@
 		594BDD891DE2761800A2CDDB /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
-				594BDD8A1DE2765F00A2CDDB /* SIViewController.swift */,
 			);
 			name = "Custom UI";
+			sourceTree = "<group>";
+		};
+		59C340B31DE72E0A003C166F /* Event Handling */ = {
+			isa = PBXGroup;
+			children = (
+				594BDD791DE2712D00A2CDDB /* Events.swift */,
+			);
+			name = "Event Handling";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +259,6 @@
 				594BDD551DE2612300A2CDDB /* StaticGameScene.swift in Sources */,
 				594BDD7D1DE2712D00A2CDDB /* GameMap.swift in Sources */,
 				594BDD7C1DE2712D00A2CDDB /* Figure.swift in Sources */,
-				594BDD8B1DE2765F00A2CDDB /* SIViewController.swift in Sources */,
 				594BDD811DE2712D00A2CDDB /* Screen.swift in Sources */,
 				5918D4F51DE42D510096A8D7 /* DynamicGameScene.swift in Sources */,
 				594BDD7F1DE2712D00A2CDDB /* Queue.swift in Sources */,
@@ -277,10 +270,9 @@
 				594BDD6E1DE26FDC00A2CDDB /* CGRect.swift in Sources */,
 				594BDD6B1DE26B6D00A2CDDB /* StickNode.swift in Sources */,
 				594BDD7E1DE2712D00A2CDDB /* Matrix.swift in Sources */,
-				594BDD821DE2712D00A2CDDB /* SIEventCenter.swift in Sources */,
+				594BDD821DE2712D00A2CDDB /* Events.swift in Sources */,
 				594BDD8D1DE2771400A2CDDB /* FigureNode.swift in Sources */,
 				594BDD6F1DE26FDC00A2CDDB /* CGSize.swift in Sources */,
-				594BDD7B1DE2712D00A2CDDB /* EventCenter.swift in Sources */,
 				594BDD801DE2712D00A2CDDB /* Randomizer.swift in Sources */,
 				594BDD4F1DE2612300A2CDDB /* AppDelegate.swift in Sources */,
 			);
