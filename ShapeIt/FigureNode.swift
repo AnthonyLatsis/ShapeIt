@@ -69,7 +69,9 @@ extension FigureNode {
 
 extension FigureNode {
     func disassembleFigure() {
-        var randomOrientations = Randomizer.randomArrayOf(size: orientationForCompleteFigure.count, spawn: Randomizer.randomOrientation)
+      let randomOrientations = Randomizer.randomArrayOf(
+          size: orientationForCompleteFigure.count,
+          spawn: Randomizer.randomOrientation)
         
         guard Array<Any>.equivalency(randomOrientations, orientationForCompleteFigure) <= GameMap.maximumEquivalencyFactor else {
             disassembleFigure()

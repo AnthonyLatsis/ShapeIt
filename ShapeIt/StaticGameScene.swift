@@ -153,19 +153,22 @@ extension StaticGameScene {
         ])
     }
     
-    func instantColor(from: UIColor, to: UIColor, duration: Double, elapsed: CGFloat) -> UIColor {
-        var frgba: [CGFloat] = [0.0, 0.0, 0.0, 0.0]
-        var trgba: [CGFloat] = [0.0, 0.0, 0.0, 0.0]
-        
-        from.getRed(&frgba[0], green: &frgba[1], blue: &frgba[2], alpha: &frgba[3])
-        to.getRed(&trgba[0], green: &trgba[1], blue: &trgba[2], alpha: &trgba[3])
-        
+    func instantColor(from: UIColor, to: UIColor, duration: Double,
+                      elapsed: CGFloat) -> UIColor {
+        var (r1, g1, b1, a1) = (CGFloat.zero, CGFloat.zero,
+                                CGFloat.zero, CGFloat.zero)
+        var (r2, g2, b2, a2) = (CGFloat.zero, CGFloat.zero,
+                                CGFloat.zero, CGFloat.zero)
+
+        from.getRed(&r1, green: &g1, blue: &b1, alpha: &a1)
+        to.getRed(&r2, green: &g2, blue: &b2, alpha: &a2)
+
         let fraction = CGFloat(elapsed / CGFloat(duration))
-            
-        return UIColor(red:   frgba[0] + fraction * (trgba[0] - frgba[0]),
-                                 green: frgba[1] + fraction * (trgba[1] - frgba[1]),
-                                 blue:  frgba[2] + fraction * (trgba[2] - frgba[2]),
-                                 alpha: frgba[3] + fraction * (trgba[3] - frgba[3]))
+
+        return UIColor(red: r1 + fraction * (r2 - r1),
+                       green: g1 + fraction * (g2 - g1),
+                       blue:  b1 + fraction * (b2 - b1),
+                       alpha: a1 + fraction * (a2 - a1))
     }
     
     func backgroundColorTransition(from: UIColor, to: UIColor, duration: Double) -> SKAction {
